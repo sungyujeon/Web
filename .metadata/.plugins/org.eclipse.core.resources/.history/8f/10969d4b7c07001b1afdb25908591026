@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		//javascript 해석: 웹 브라우저(해석기+다양한 객체 제공)
+		//웹 브라우저 내장 객체: window 객체
+		window.document.write("방가방가<br>");
+		
+		//window 객체 생략 가능
+		document.write("window 객체 생략 가능<br>")
+		
+		console.log(10+100);
+		console.log("디버깅, 결과 미리보기, 오류메시지 확인");
+		
+		document.write("<b>hello world</b>");
+		document.write('<table border="1">');
+		document.write('<tr><td>aa</td><td>bb</td></tr>');
+		document.write("</table>");
+		
+		var num; //미리 타입을 정의하지 않음
+		let num2;
+		console.log(num); //undefined(오류가 아니고 정상적인 메시지)
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript 문법</title>
+	<script type="text/javascript">
+		/*
+		 ● 변수
+		   1)개요
+		 	변수 생성 > 값 입력 > 타입 결정
+		    ES5(모든 변수의 타입:var) : ES6(2015년~) <let, const>(권장)
+			
+			var a;
+			let b;
+			const c;
+			
+			//초기화 시점에 타입 설정
+			var i;  //undefined
+			i = "홍길동" >> 타입 설정 >> String
+			i = 100    >> 타입 설정 >> Number
+			
+		   2)종류
+		     -정수, 실수, boolean, 문자
+		     -내부적으로 >> Number, boolean, Array, Object...
+		     
+		   3)범위(Scope)
+		     a)page     >> global(전역 변수)
+		     b)function >> local(지역 변수)
+		*/
+		var num; //global >> 모든 함수에서 사용 가능
+		function call(){
+			let name;   //local >> call 함수 안에서
+			name = "방가";
+		}
+		
+		var a;
+		console.log(a);         //undefined
+		a = 100;                //초기화
+		console.log(typeof(a)); //타입:number
+		
+		var i, j;
+		i = 200;
+		j = 300;
+		var result = i + j;
+		console.log(result);
+		
+		var intnum = 100;  //integer
+		var dnum = 12.345; //float
+		var flag = true;   //boolean
+		var str = null;    //null (object??)
+		var str2 = "ABC";  //string
+		
+		//연산자
+		//산술(+,-,*,/,%)
+		var num1 = 10;
+		var num2 = 3;
+		document.write(num1/num2 + "<br>");   //실수 범위까지 
+		document.write(num1%num2 + "<br>");   //나머지
+		
+		//관계(==(===), !=, >=, < ...)
+		//true, false
+		var a = 3;
+		var b = 5;
+		document.write((a == b) + "<br>"); //false
+		document.write((a != b) + "<br>"); //true
+		document.write((a > b) + "<br>");  //false
+		
+		//논리(&&, ||)
+		document.write((10 > 5) && (1 != 3) + "<br>");
+		
+		//삼항연산자
+		var result2 = ((4 % 2) == 0) ? "짝수" : "홀수";
+		document.write(result2 + "<br");
+		
+		//대입연산자(+=, -=, *=, /=)a
+		var p = 10;
+		var k = 5;
+		p += k;
+		document.write("결과" + p + "<br>");
+		
+		var x = 5 + 5;
+		var y = "5" + 5;
+		
+		//Today Point!
+		//내부적으로 타입 비교
+		var v = "5";
+		var v2 = 5;
+		var v3 = 5;
+		document.write((v == v2) + "<br>");
+		document.write((v === v2) + "<br>");
+		document.write((v2 == v3) + "<br>");
+		
+	
+	</script>
+</head>
+<body>
+
+</body>
+</html>

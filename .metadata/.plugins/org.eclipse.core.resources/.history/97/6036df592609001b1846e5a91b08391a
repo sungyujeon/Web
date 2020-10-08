@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>동적테이블 만들기</title>
+	<style>
+		table {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+		
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 8px;
+		}
+		
+		tr:nth-child(even) {
+		  background-color: #dddddd;
+		}
+	</style>
+	
+	
+	<script type="text/javascript">
+		document.createElement("style");
+		var tableStyle = document.createElement("table");
+		var tdStyle = document.createElement("td");
+		var thStyle = document.createElement("th");
+		var trStyle = document.createElement("tr");
+		tableStyle.style.border-collapse = "collapse";
+		
+		
+	
+		window.onload=function() {
+			document.getElementById("b1").onclick=function() {
+				var row = document.getElementById("txtrow").value;
+				var col = document.getElementById("txtcolumn").value;
+				
+				var table = document.createElement("table");
+				table.setAttribute("border-collapse", "collapse");
+				table.setAttribute("width", "100%");
+				
+				
+				var tr = document.createElement("tr");
+				tr.setAttribute("background-color", "#dddddd");
+				
+				var th = document.createElement("th");
+				var td = document.createElement("td");
+				th.setAttribute("border", "1px solid #dddddd");
+				th.setAttribute("padding", "8px");
+				
+				td.setAttribute("border", "1px solid #dddddd");
+				td.setAttribute("padding", "8px");
+				
+				var txtnode = document.createTextNode("11");
+				th.appendChild(txtnode);
+				
+				
+				
+				table.appendChild(tr);
+				for(let i = 0; i < col; i++) {
+					tr.appendChild(th)
+				}
+				
+				document.body.appendChild(table);
+				
+			
+			/*
+			<table id = "#t1">
+			
+				<tr>
+					<th></th>
+					<th></th>
+				</tr>
+				<tr>
+					<th></th>
+				</tr>
+			</table>
+			*/
+			}
+			
+			document.getElementById("b2").onclick=function() {
+				var col = document.getElementById("txtcolumn").value;
+
+			}
+		}
+	
+	</script>
+</head>
+<body>
+	<div id="div">
+		행의수 : <input type="text" id="txtrow" name="txtrow" value="2"><br>
+		열의수 : <input type="text" id="txtcolumn" name="txtcolumn" value="2"><br>
+		<input type="button" id="b1" value="동적테이블 생성">
+		<input type="button" id="b2" value="동적테이블 제거">
+		
+		
+	</div>
+	
+	<div id="table">
+		<table>
+			<tr>
+			  <th>Company</th>
+			  <th>Contact</th>
+			  <th>Country</th>
+			</tr>
+			<tr>
+			  <td>Alfreds Futterkiste</td>
+			  <td>Maria Anders</td>
+			  <td>Germany</td>
+			</tr>
+			<tr>
+			  <td>Centro comercial Moctezuma</td>
+			  <td>Francisco Chang</td>
+			  <td>Mexico</td>
+			</tr>
+			<tr>
+			  <td>Ernst Handel</td>
+			  <td>Roland Mendel</td>
+			  <td>Austria</td>
+			</tr>
+			<tr>
+			  <td>Island Trading</td>
+			  <td>Helen Bennett</td>
+			  <td>UK</td>
+			</tr>
+			<tr>
+			  <td>Laughing Bacchus Winecellars</td>
+			  <td>Yoshi Tannamuri</td>
+			  <td>Canada</td>
+			</tr>
+			<tr>
+			  <td>Magazzini Alimentari Riuniti</td>
+			  <td>Giovanni Rovelli</td>
+			  <td>Italy</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

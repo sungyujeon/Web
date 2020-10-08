@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		//Array
+		/*
+			<JAVA>
+			- 정적(Array) / 동적(collection)
+			- int[] arr = new int[10];
+			- int[] arr = new int[] {10,20,30};
+			- int[] arr = {10,20,30};
+			
+			- ArrayList al = new ArrayList();
+			- al.add(10); al.add(20);
+			
+			<JavaScript>
+			- 정적 + 동적 >> Array >> 내부적으로 stack 구조(push, pop)
+			- var arr = []; (일반적)
+			- var arr = [1,2,3]; (일반적)
+			- var arr = new Array(5); (추천x)
+			- var arr = new Array(10,20,30); (추천x)
+		*/
+		var arr = [10,20,30];
+		for(let i = 0; i < arr.length; i++) {
+			document.write(arr[i] + "<br>");
+		}
+		document.write(arr.pop());
+		
+		//BAD: 타입이 설정되어 있지 않기 때문에 초기화(x)
+		var eng = new Array(3);
+		for(let i = 0; i < eng.length; i++) {
+			document.write(eng[i] + "<br>");
+		}
+		eng[0]=100;
+		eng[1]=200;
+		eng[2]=300;
+		document.write("<hr>");
+		for(let i = 0; i < eng.length; i++) {
+			document.write(eng[i] + "<br>");
+		}
+		
+		//GOOD: 빈 배열
+		var arr2 = [];
+		arr2.push(10);
+		arr2.push(20);
+		
+	
+	
+	
+		//제어문(java 동일): 개선된 for문 제외
+		//while
+		document.write("<br><br>제어문<br>")
+			
+		var i = 1;
+		var sum = 0;
+		while(i <= 10) {
+			sum += i;
+			i++;
+		}
+		document.write("sum:" + sum + "<br>");
+		
+		//for
+		var sum2 = 0;
+		for(let i = 0; i <= 10; i++) {
+			if(i % 3 == 0) {
+				console.log("i:" + i);
+				continue;
+			}
+			console.log("for i : " + i);
+			sum2 += i;
+		}
+		document.write("sum2:" + sum2 + "<br>");
+		
+		var a = 1;
+		do {
+			document.write(a + "<br>");
+			a++;
+		} while(a < 11);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

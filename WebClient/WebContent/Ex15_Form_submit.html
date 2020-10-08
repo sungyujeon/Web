@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>개발자 필수 태그</title>
+</head>
+<body>
+<!-- 
+	회원가입, 게시판 글쓰기 만들기
+ -->
+ 	<h3>로그인</h3>
+ 	<form action="Ex15_login.jsp" method="post">
+ 		ID:<input type="text" name="id"><br>
+ 		PWD:<input type="password" name="pwd"><br>
+ 		<!-- <input type="submit" value="전송하기"> -->
+		<input type="image" src="images/btn.jpg">
+ 		<input type="reset" value="취소하기">
+ 	</form>
+
+</body>
+</html>
+
+<!-- 
+	form 태그는 전송을 담당하는 태그(서버(클라이언트 데이터) 담아서)
+	
+	네이버 > 회원가입 요청 > 회원가입 전달 > 정보입력(id, 이름) > 서버로 전송 > 처리(검증,삽입)
+	
+	<form 전송 수단(submit 통해서 목적지 출발)>
+	1.GET
+	  >> method="post" action="login.jsp" 목적지 주소
+	  >> 웹사이트 주소창에 컨텐츠 정보 노출
+	  >> http://localhost:8090/WebClient/Ex15_login?id=kglim&pwd=1004
+	<a href="board.jsp?num=100%category=board">1번글</a>
+	
+	2.POST
+	  >> method="post" action="login.jsp" 목적지 주소
+	  >> http 프로토콜 내부에 정보(입력값) 숨겨서 전송
+	  >> http://localhost:8090/WebClient/Ex15_login.jsp
+	
+	기장(선장): submit, reset
+	1.input type="submit" >> 전송 가능
+	2.input type="image"  >> 내부적으로 전송 가능
+	3.input type="button" >> 기능이 없어서 javaㄴcript 함수 생성 >> 전송
+	  :함수 안에서 >> document.form.submit() 강제 호출
+	
+	
+ -->

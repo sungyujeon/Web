@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		body {
+			background-image: url("images/btn.jpg");
+			background-repeat: no-repeat;
+			background-position: right top;
+		}
+	</style>
+	</head>
+<body>
+	<h3>content</h3>
+</body>
+</html>

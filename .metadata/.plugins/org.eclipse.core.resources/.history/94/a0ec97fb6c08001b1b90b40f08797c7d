@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>급여 관리 시스템</title>
+<!--  
+규칙 : 기본급여  : (정수값)
+       기타수당  : 국가유공자 + 5년이상 근속
+       총액      : (기본급 + 자격증 수당 + 자녀 수당 + 기타 수당)
+       세금      : 기본급 * 0.22 
+       실수령액  : 총액 - 세금
+       연봉      : 총액 * 12 + 기본급
+       천단위 콤마 처리 : 자율 (표현식 , 로직)
+       10,000,000원 
+-->
+	<script type="text/javascript">
+		//function calculate() {}
+		//각 데이터 받아서
+		//성명, 기본급, 자격증수당은 그대로 resultName, resultBasicPay, resultLicence로 반환
+		//자격증, 자녀수당, 기타수당은 체크여부에 따라 resultLicense, resultChild, resultEtc로 반환ㅋ
+		//기타수당, 총액, 세금, 실수령액, 연봉은 계산하여 반환
+		function resultSal(frm) {
+			var resultFrm = document.resultForm;
+			var numArray;
+			
+			//변수 선언
+			var name;
+			var basicPay;
+			var license;
+			var child;
+			var totalPay;
+			var tax;
+			var pay;
+			var yearlyPay;
+			var etc = 0;
+			
+			
+			//변수 값 입력
+			name = frm.name.value; //이름
+			basicPay = Number(frm.basicPay.value); //기본급
+			totalPay = basicPay + license + child + etc; //총액
+			tax = basicPay * 0.22; //세금
+			pay = totalPay - tax; //실수령액
+			yearlyPay = totalPay * 12 + basicPay; //연봉
+			
+			//자격증
+			for(let index in frm.license) {
+				//resultFrm.resultLicense.value = (frm.license[index].checked == true) ? frm.license[index].value : 0;
+				if(frm.license[index].checked == true) {
+					license = Number(frm.license[index].value);
+					resultFrm.resultLicense.value = license;
+				}
+			}
+			
+			//자녀
+			for(let index in frm.child) {
+				//resultFrm.resultChild.value = (frm.child[index].checked == true) ? frm.child[index].value : 0;
+				if(frm.child[index].checked == true) {
+					child = Number(frm.child[index].value);
+					resultFrm.resultChild.value = child;
+				}
+			}
+			
+			//기타
+			if(frm.merit.checked == true) {
+				etc += Number(frm.merit.value);
+			}
+			if(frm.longterm.checked == true) {
+				etc += Number(frm.merit.value);
+			}
+			
+			
+			//result로 copy / 콤마처리
+			resultFrm.resultName.value = name;
+			resultFrm.resultBasicPay.value = makeComma(basicPay);
+			resultFrm.resultEtc.value = makeComma(etc);
+			resultFrm.resultTotalPay.value = makeComma(totalPay);
+			resultFrm.resultTax.value = makeComma(tax);			
+			resultFrm.resultPay.value = makeComma(pay);
+			resultFrm.resultYearlyPay.value = makeComma(yearlyPay);
+		}
+		
+		//콤마 처리
+		function makeComma(obj) {
+			str = String(obj);
+			return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+		}
+	
+	</script>
+</head>
+<body>
+	<h2>급여 관리 시스템</h2>
+	<form name="payManage">
+		<table>
+			<tr>
+				<td>성명:</td>
+				<td><input type="text" name="name" size="20"></td>
+			</tr>
+			<tr>
+				<td>기본급:</td>
+				<td><input type="text" name="basicPay" size="20"></td>
+			</tr>
+			<tr>
+				<td>자격증 수당:</td>
+				<td><input type="radio" name="license" value="150000">기사 150,000원
+					<input type="radio" name="license" value="100000">산업기사 100,000원
+					<input type="radio" name="license" value="50000">기능사 50,000원
+				</td>
+			</tr>
+			<tr>
+				<td>자녀 수당:</td>
+				<td><input type="radio" name="child" value="100000">1인 100,000원
+					<input type="radio" name="child" value="200000">2인 200,000원
+					<input type="radio" name="child" value="300000">3인 300,000원
+				</td>
+			</tr>
+			<tr>
+				<td>기타 수당:</td>
+				<td><input type="checkbox" name="merit" value=100000>국가유공자 100,000원
+					<input type="checkbox" name="longterm" value=100000>5년이상 근속 100,000원
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" name="btn" value="계산하기"
+					onclick="resultSal(this.form)" style="margin-left: 30px"></td>
+			</tr>
+		</table>
+	</form>
+	<p></p>
+	<form name="resultForm">
+		<table align="left" style="margin-left: 0px">
+			<tr>
+				<th colspan=2>출력 결과</th>
+			</tr>
+			<tr>
+				<td width="100px">성명:</td>
+				<td><input type=text name=resultName></td>
+			<tr>
+				<td>기본급:</td>
+				<td><input type=text name=resultBasicPay></td>
+			<tr>
+				<td>자격증 수당:</td>
+				<td><input type=text name=resultLicense></td>
+			<tr>
+				<td>자녀 수당:</td>
+				<td><input type=text name=resultChild></td>
+			<tr>
+				<td>기타 수당:</td>
+				<td><input type=text name=resultEtc></td>
+			<tr>
+				<td>총액:</td>
+				<td><input type=text name=resultTotalPay></td>
+			<tr>
+				<td>세금:</td>
+				<td><input type=text name=resultTax></td>
+			<tr>
+				<td>실수령액:</td>
+				<td><input type=text name=resultPay></td>
+			<tr>
+				<td>연봉:</td>
+				<td><input type=text name=resultYearlyPay></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

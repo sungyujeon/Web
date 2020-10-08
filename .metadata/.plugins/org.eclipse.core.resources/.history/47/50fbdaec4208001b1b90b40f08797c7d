@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>javascript 함수(문자열,숫자)</title>
+	<script type="text/javascript">
+		var str="10+20+30";
+		document.write(str + "<br>");
+		
+		//1.eval()
+		//문자형 수식을 계산식으로 >> "10+20+30" >> 10+20+30 >> 계산 >> 결과
+		document.write("eval():" + eval(str) + "<br>");
+		
+		//2.isNaN() >> Not a Number >> 숫자가 아니면(return true) : 숫자면(return false)
+		document.write(isNaN("12345") + "<br>");   //false 숫자
+		document.write(isNaN("12345A") + "<br>");  //true 문자
+		document.write(isNaN("대한민국") + "<br>");   //true 문자
+		document.write(isNaN('12345') + "<br>");   //false 숫자
+		
+		//문자열 함수
+		//https://www.w3schools.com/jsref/jsref_obj_string.asp
+		let i="100";
+		let j="200";
+		document.write("결합:" + (i+j));  //+산술, 결합
+		document.write("<br>숫자 변환:" + (Number(i) + Number(j)));
+		
+		/*
+		The Number() method
+		The parseInt() method
+		The parseFloat() method
+		*/
+		
+		//숫자 함수
+		//https://www.w3schools.com/jsref/jsref_obj_number.asp
+		
+		//Default Event
+		/*
+		 Event			 Description
+		onchange		An HTML element has been changed
+		onclick			The user clicks an HTML element
+		onmouseover		The user moves the mouse over an HTML element
+		onmouseout		The user moves the mouse away from an HTML element
+		onkeydown		The user pushes a keyboard key
+		<onload>		The browser has finished loading the page
+		  >>Html에서 body 안에 있는 모든 요소가 메모리(웹브라우저)에 로딩되고 난 후에 자동으로 사건 발생
+		  >>자동으로 호출 이벤트 onload() 발생
+		  >>모든 요소는 메모리에 계층트리(DOM) 형태로 있다는 보장
+		  
+		onblur()   >> 포커스가 요소를 떠날 때 발생
+		onfocus()  >> 포커스가 요소에 들어올 때 발생
+		*/
+		function focusFunc() {
+			document.getElementById("myinput").style.background="yellow";
+		}
+		
+		function blurFunc() {
+			document.getElementById("myinput").style.background="white";
+		}
+		
+		function selectTag() {
+			var val = document.myform.sel.value;
+			alert(val);
+		}
+		
+		//Point: javascript >> this(요소 자신)
+		function changeColor(obj) {
+			console.log(obj);
+			obj.style.backgroundColor="gold";
+		}
+		function changeColor2(obj) {
+			console.log(obj2);
+			obj.style.backgroundColor="white";
+		}
+		function load() {
+			var data = document.myform.money.value;
+			console.log(isNaN(data));
+		}
+		
+	</script>
+</head>
+<body>
+	<form action="#" name="myform">
+	  	
+	  	<input type="text" id="myinput" name="myinput" onfocus="focusFunc()" onblur="blurFunc()"><br>
+	  	
+	  	<select name="sel" onchange="selectTag()">
+	  		<option value="A">AA</option>
+	  		<option value="B">BB</option>
+	  		<option value="C">CC</option>
+	  		<option value="D">DD</option>
+	  	</select>
+	  	<hr>
+	  	
+	  	<input type="text" onmouseover="changeColor(this)" onmouseout="changeColor2(this)">
+	  	<br>
+	  	<input type="text" onkeypress="alert('안돼 안돼')">
+	  	<br>
+	  	<input type="text" value="1000" name="money">
+	  </form>
+</body>
+</html>

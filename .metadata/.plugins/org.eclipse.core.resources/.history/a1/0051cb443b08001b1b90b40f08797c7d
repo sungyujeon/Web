@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>javascript 함수(문자열,숫자)</title>
+	<script type="text/javascript">
+		var str="10+20+30";
+		document.write(str + "<br>");
+		
+		//1.eval()
+		//문자형 수식을 계산식으로 >> "10+20+30" >> 10+20+30 >> 계산 >> 결과
+		document.write("eval():" + eval(str) + "<br>");
+	</script>
+</head>
+<body>
+
+</body>
+</html>

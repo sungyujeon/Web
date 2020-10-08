@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+C:\Users\user\Desktop\0803_bit\WEB\WebClientLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2698036860.index
+\WebClient_Javascript\src
+C:\Users\user\Desktop\0803_bit\WEB\WebClientLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2291061506.index
+\Web\src
+C:\Users\user\Desktop\0803_bit\WEB\WebClientLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\889149064.index
+\WebClient\src

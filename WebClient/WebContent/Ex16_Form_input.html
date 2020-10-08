@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>input 태그 연습</title>
+</head>
+<body>
+	<!-- 
+		input type: Color, Date, datalist, Email, Number
+	 -->
+	<input list="browsers" name="browser">
+  	<datalist id="browsers">
+    	<option value="Internet Explorer">
+    	<option value="Firefox">
+    	<option value="Chrome">
+    	<option value="Opera">
+    	<option value="Safari">
+  	</datalist>
+  	
+
+	<form action="">
+		<fieldset>
+			<legend>Text:Passowrd</legend>
+			Text:<input type="text" name="userid" id="userid"><br>
+			Password:<input type="password" name="pwd" maxlength="5"><br>
+			<hr>
+			Text2:<input type="text" name="data" id="data" maxlength="10"
+					size="100px" value="초기값"><br>
+			<hr>
+			readonly(읽기 전용: 서버로 데이터 전송 가능)
+			<input type="text" name="data2" value="hong" readonly="readonly">
+			<br>
+			disabled(비활성화: 서버로 데이터 전송 불가능)
+			<input type="text" name="data3" value="kim" disabled="disabled">
+		</fieldset>
+		
+		<fieldset>
+			<legend>체크박스(다중선택)</legend>
+			농구:<input type="checkbox" name="sports_1" value="A" checked="checked">
+			야구:<input type="checkbox" name="sports_2" value="B">
+			축구:<input type="checkbox" name="sports_3" value="C">
+			<!-- 
+				(1번)
+				서버 전송하기(GET)
+				register.jsp?sports_1=A&sports_2=B&sports_3=C
+				
+				(register.jsp)
+				String str = request.getPrameter("sports_1");
+				>> str == A
+				
+				(2번)
+				농구:<input type="checkbox" name="sports" value="A" checked="checked">
+				야구:<input type="checkbox" name="sports" value="B">
+				축구:<input type="checkbox" name="sports" value="C">
+				
+				register.jsp?sports=A&sports=B&sports=C
+				register.jsp
+				String[] str = request.getParameter("sports");
+				str[0] = "A";
+				str[1] = "B";
+				str[2] = "C";
+				
+			 -->
+		</fieldset>
+		
+		<fieldset>
+			<legend>Select 태그(단일선택:년,월,일)</legend>
+			<select name="year">
+				<option value="2020">2020년</option>
+				<option value="2019" selected>2019년</option>
+				<option value="2018">2018년</option>
+				<!-- 
+				?year=2019
+				 -->
+			</select>			
+		</fieldset>
+		<fieldset>
+			<legend>Select 태그(다중선택:checkbox)</legend>
+			<select name="items" multiple>
+				<option value="2020">2020년</option>
+				<option value="2019" selected>2019년</option>
+				<option value="2018">2018년</option>
+				<!-- 
+				?year=2019
+				 -->
+			</select>
+		</fieldset>
+		<fieldset>
+			<legend>라디오버튼(단일선택:남,여...):name이 같으면 하나의 group</legend>
+			남<input type="radio" name="gender" value="1"><br>
+			여<input type="radio" name="gender" value="2" checked="checked">			
+		</fieldset>
+		
+		<fieldset>
+			<legend>기타 등등</legend>
+			1.화면에 출력이 안돼요(소스는 있음)
+				<input type="hidden" value="1000" name="hdata"><hr>
+			2.파일 업로드(선택)
+				<input type="file" name="uploadimage"><hr>
+			3.게시판 글쓰기(여러줄): 초기크기(rows, cols)<br>
+				<textarea rows="10" cols="10" name="content">입력하세요</textarea><hr>
+			4.각종 버튼들
+				<input type="button" value="나 눌러봐" onclick="alert('추석입니다')"><br>
+				<input type="image" src="images/btn.jpg"><br>
+				<input type="submit" value="전송"><br>
+				<input type="reset" value="입력값 취소">
+		</fieldset>
+	</form>
+</body>
+</html>

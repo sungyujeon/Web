@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>유효성 검증</title>
+	<script type="text/javascript">
+		/*
+		  ● 유효성 검증(상황: client > 서버에 회원가입 요청 > 서버가 회원가입 페이지를 client에게 전송)
+			1.id 입력, pwd 입력 >> 서버로 전송 >> 서버가 값을 받음 >> 검증 >> 응답
+			2.id 입력, pwd 입력 >> Clent에서 검증 >> 검증 끝나면 >> 서버로 전송 >> 응답
+			  >> 네트워크 트래픽(round trip): 서버와의 통신 횟수 줄이기 위함 >> javascript로 검증
+			  >> but!!!! 중복 ID 검사(서버로 통신): 서버 DB 안에서 검사해야함..
+		*/
+		
+		function send() {
+			//유효성 검증 >> 서버로 전송
+			//1.요소의 정보를 load >> 판단
+			//  var ele = document.forms[0].elements[0].value >> DOM 사용
+			var inputuserid = document.loginform.txtuserid;
+			console.log(inputuserid);
+			console.log(inputuserid.value);
+			
+			//DOM script
+			var userpwd = document.getElementById("txtpwd");
+			console.log(userpwd);
+			console.log(userpwd.value);
+			
+			//검증 로직(사용자 마음)
+			//1.입력 유무
+			//2.업무 로직
+			if(inputuserid.value == "" || !(inputuserid.value.length >= 3 && inputuserid.value.length <= 10)) {
+				alert("다시 입력해");
+				document.loginform.txtuserid.focus();
+				inputuserid.select();
+			} else {
+				alert("검증완료");
+				
+				//서버로 전송
+				//action="" 원칙: action="Ex08_login.jsp"
+				document.loginform.action = "Ex08_login.jsp"; //동적으로 주소 변화
+				document.loginform.submit(); //form 태그가 submit()를 내장하고 있어서 호출할 수 있는 것
+				
+				
+			}
+
+			
+		}
+		
+	</script>
+</head>
+<body>
+<!-- 
+<input> tag에  name 속성을 주지 않으면 server에서 data를 받을 수 없음
+<input> tag에 id 속성 >> javascript, css 통해서 제어하겠다!!!!!
+
+일반적으로
+<input type="" name="user" id="user"> 모두 적음
+-->
+	<form action="" method="get" name="loginform">
+		ID:<input type="text" name="txtuserid"><br>
+		PWD:<input type="password" name="txtpwd" id="txtpwd"><br>
+		<input type="button" value="전송" onclick="send()">
+		<!-- 
+			type="submit" >> 출발시킬 수 있는 기능(o)
+			type="image"  >> 출발시킬 수 있는 기능(o)
+			type="button" >> 출발시킬 수 있는 기능(x) >> onclick="함수"
+		 -->
+	</form>
+</body>
+</html>

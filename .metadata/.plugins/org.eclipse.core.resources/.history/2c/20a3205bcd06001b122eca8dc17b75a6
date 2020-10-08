@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script>
+function logout_user() {
+  var xhttp = new XMLHttpRequest(), a, b, c, f, valid = 1;
+  f = document.forms["loginform"];
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      if (this.responseText == "OK") {
+        document.location = "index.php";
+      } else {
+        alert(this.responseText);
+      }
+    }
+  };
+  xhttp.open("POST", "logout_user.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send();
+}
+
+</script>
+
+
+</body>
+</html>

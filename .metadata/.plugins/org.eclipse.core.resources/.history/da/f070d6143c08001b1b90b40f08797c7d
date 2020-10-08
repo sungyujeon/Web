@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>javascript 함수(문자열,숫자)</title>
+	<script type="text/javascript">
+		var str="10+20+30";
+		document.write(str + "<br>");
+		
+		//1.eval()
+		//문자형 수식을 계산식으로 >> "10+20+30" >> 10+20+30 >> 계산 >> 결과
+		document.write("eval():" + eval(str) + "<br>");
+		
+		//2.isNaN() >> Not a Number >> 숫자가 아니면(return true) : 숫자면(return false)
+		document.write(isNaN("12345") + "<br>");   //false 숫자
+		document.write(isNaN("12345A") + "<br>");  //true 문자
+		document.write(isNaN("대한민국") + "<br>");   //true 문자
+		document.write(isNaN('12345') + "<br>");   //false 숫자
+		
+		//문자열 함수
+		//https://www.w3schools.com/jsref/jsref_obj_string.asp
+		let i="100";
+		let j="200";
+		document.write("결합:" + (i+j));
+		
+		//숫자 함수
+		//https://www.w3schools.com/jsref/jsref_obj_number.asp
+		
+		
+		
+		
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

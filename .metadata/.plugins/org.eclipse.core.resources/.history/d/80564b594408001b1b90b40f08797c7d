@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>내장객체</title>
+	<script type="text/javascript">
+		/*
+			javascript 다양한 내장 객체 제공: new 사용(o || x)
+		*/
+		
+		var today = new Date();
+		document.write(today + "<br>");
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

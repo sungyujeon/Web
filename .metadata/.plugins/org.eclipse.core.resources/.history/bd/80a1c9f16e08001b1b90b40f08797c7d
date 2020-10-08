@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		//while
+		var i = 1;
+		var sum = 0;
+		while(i <= 10) {
+			sum += i;
+			i++;
+		}
+		document.write("sum:" + sum + "<br>");
+		
+		//for
+		var sum2 = 0;
+		for(let i = 0; i <= 10; i++) {
+			if(i % 3 == 0) {
+				console.log("i:" + i);
+				continue;
+			}
+			console.log("for i : " + i);
+			sum2 += i;
+		}
+		document.write("sum2:" + sum2 + "<br>");
+		
+		var a = 1;
+		do {
+			document.write(a + "<br>");
+		} while(true);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("images/mac.jpg");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+</style>
+
+<style>
+#login_container {
+  background-color:#f1f1f1;
+  margin:auto;
+  max-width:700px;
+  text-align:left;
+}
+
+/* Full-width inputs */
+.login input[type=text], .login input[type=email], .login input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.login button {
+  background-color: #4CAF50;
+  border-radius:5px;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.login button:hover {
+  background-color: #3e8e41;
+}
+
+/* Extra style for the cancel button (red) */
+.login .cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #dc3545;
+}
+.login .cancelbtn:hover {
+  background-color: #c32232;
+}
+
+/* Add padding to containers */
+.login .container {
+  padding: 40px;
+}
+#usernameerror,#passworderror,#passwordrepeaterror {
+  position:absolute;
+  right:0;
+  bottom:-12px;
+  color:crimson;
+}
+
+.pwdrequirements {
+  border:1px solid #d3d3d3;
+  background-color:#f1f1f1;
+  padding:0 8px;  
+  margin:2px 16px 16px 16px;
+}
+.pwdrequirements p {
+  line-height:1em;
+  font-size:90%!important;
+}
+.pwdrequirements i{
+  font-size:80%;
+  color:#4CAF50;
+  visibility:hidden;
+  display:inline-block;
+  width:12px;
+}
+#div_logininstead span {
+  text-decoration:underline;
+  cursor:pointer;
+}
+#div_logininstead span:hover {
+  color:#4CAF50;
+}
+
+button[type=submit]:disabled {
+  opacity:0.5;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="#registration" class="w3-bar-item w3-button"><i class="fa fa-user"></i> REGISTRATION</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">What is our problem ?</span><br><br>
+    <span class="w3-large">No one knows the answer.</span>
+    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">REGISTRATION</a></p>
+  </div> 
+</header>
+
+<!-- About Section -->
+<div class="w3-container" style="padding:128px 16px" id="about">
+  <h3 class="w3-center">ABOUT THE BITCAMP</h3>
+  <p class="w3-center w3-large">Key features of our academy</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Responsive</p>
+      <p>Bit1.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Passion</p>
+      <p>Bit2.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Design</p>
+      <p>Bit3.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Support</p>
+      <p>Bit4.</p>
+    </div>
+  </div>
+</div>
+<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64"
+	 style="margin-top: 50px; margin-bottom: 50px;"></div>
+
+
+<!-- REGISTRATION Section
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="registration">
+  <h3 class="w3-center">REGISTRATION</h3>
+  <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
+  <div style="margin-top:48px">
+    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Chicago, US</p>
+    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
+    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+    <br>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-black" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+
+    <img src="images/map.jpg" class="w3-image w3-greyscale" style="width:100%;margin-top:48px">
+  </div>
+</div>
+-->
+
+<!-- REGISTRATION Section -->
+<div id="registration" class="w3-container w3-light-grey" style="text-align:center; padding:128px 16px">
+  <div id="login_container" class="login">
+    <form id="loginform" name="loginform" class="modal-content animate" autocomplete="off" method="post" action="">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:20px">
+          <h2>SIGN UP</h2>
+        </div>
+        <div style="position:relative;">
+          <label for="uname"><b>Username</b></label>
+          <input type="email" placeholder="Enter a valid e-mail address" id="w3schools_uname" name="w3schools_uname" required="" autocomplete="off" onfocus="inputGetsFocus(this)" oninput="inputGetsInput(this)">
+          <div id="usernameerror"></div>
+          <div id="div_logininstead" style="display:none">
+            Already have an Account? <span onclick="click_logininstead()">Log In </span><br><br>
+          </div>
+        </div>
+        <div style="position:relative;">
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" id="w3schools_psw" name="w3schools_psw" required="" autocomplete="new-password" onfocus="inputGetsFocus(this);return false;" oninput="checkrequirements()" onblur="inputLostFocus(this);">
+          <div id="passworderror"></div>
+        </div>
+        <div>
+          <div>Password requirements:</div>
+          <div class="pwdrequirements">
+            <p id="req1"><i class="fas fa-check" aria-hidden="true"></i> At least 8 characters long</p>
+            <p id="req2"><i class="fas fa-check" aria-hidden="true"></i> At least 1 lower-case letter [a-z]</p>
+            <p id="req3"><i class="fas fa-check" aria-hidden="true"></i> At least 1 upper-case letter [A-Z]</p>
+            <p id="req4"><i class="fas fa-check" aria-hidden="true"></i> At least 1 digit [0-9]</p>
+          </div>
+        </div>
+        <div style="position:relative;">
+          <label for="psw"><b>Repeat Password</b></label>
+          <input type="password" placeholder="Repeat Password" id="w3schools_psw2" name="w3schools_psw2" required="" autocomplete="new-password" onfocus="inputGetsFocus(this);return false;">
+          <div id="passwordrepeaterror"></div>
+        </div>
+        <br>
+        <button type="submit" onclick="create_new_user(event)" id="createsubmitbtn" disabled="">CREATE ACCOUNT</button>
+        <br>
+      </div>
+    </form>
+  </div>
+</div>
+<img src="images/map.jpg" class="w3-image w3-greyscale" style="width:100%;margin-top:48px">
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+</body>
+</html>

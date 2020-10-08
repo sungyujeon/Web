@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<section class="content-area">
+	<section class="pt_register">
+		<div class="uk-width-1-1 uk-margin-xlarge-top">
+			<div class="login-wrap width-small">
+				<div class="header uk-text-center">
+					<h2 class="title">나이키 멤버 가입</h2>
+					<p class="description">
+						멤버가 되어 나이키가 제공하는<br>
+						최고의 제품과 혜택을 만나보세요.
+					</p>
+				</div>
+				<div class="body">
+					<div data-module-social-login="" class="uk-margin-large-bottom">
+						<div class="social-login-container">
+							<div class="uk-grid">
+								<div class="uk-width-1-1 uk-width-medium-1-1">
+									<a href="#" class="btn-link line large btn-kakao" data-social-btn="social_kakao" data-click-area="register" data-click-name="register with kakao account">
+										<i class="icon-kakaotalk"></i><span class="txt">카카오 계정으로 신규 가입</span>
+									</a>
+								</div>
+								<div class="uk-width-1-1 uk-width-medium-1-1">
+									<a href="" class="btn-link line large btn-facebook" data-social-btn="social_facebook" data-click-area="register" data-click-name="register with facebook account">
+										<i class="icon-facebook"></i><span class="txt">페이스북 계정으로 신규 가입</span>
+									</a>
+								</div>
+							</div>
+							<form name="social_facebook" method="post" action="/kr/ko_kr/signin/facebook"><input type="hidden" name="scope" value="public_profile,email"><input type="hidden" name="csrfToken" value="G8WV-L6CI-M584-DANL-JTH6-LKV4-62PE-A2AC"></form>
+							<form name="social_kakao" method="post" action="/kr/ko_kr/signin/kakao"><input type="hidden" name="csrfToken" value="G8WV-L6CI-M584-DANL-JTH6-LKV4-62PE-A2AC"></form>
+						</div>
+					</div>
+					<div class="h-line uk-margin-large-bottom">
+						<span class="info-text">OR</span>
+					</div>
+					<div data-module-dynamicform="{isAjax:false,errMsg:로그인 실패 입니다.}">
+						
+						<div class="uk-grid">
+							<div class="uk-width-1-1 dynamic-form-register">
+											
+	<div class="dynamic-form" data-form="">
+		<div class="uk-alert uk-alert-danger" id="jq_uk-alert-danger" style="display:none;">
+			<div>아이디 혹은 비밀번호가 잘못 입력되었습니다.</div>
+		</div>
+		<form method="POST" class="uk-form-large" action="/kr/ko_kr/register" novalidate="">
+			<input type="hidden" name="locale" value="ko_KR">
+			<input type="hidden" name="dynamicForm" value="register">
+			<input type="hidden" name="templatePath" value="/authentication/register">
+			<input type="hidden" name="successUrl" value="/registerSuccess">
+			<input type="hidden" name="userId" value="">
+				<div class="uk-form-row">		
+	<label class="uk-form-label"></label>
+	<div class="input-textfield width-max  " data-component-textfield="">
+		<label for="emailAddress">사용하실 ID를 입력해주세요. (수신 가능 E-mail)</label>
+		<input type="email" data-parsley-trigger="keyup" data-parsley-equalto-message="입력값이 일치하지 않습니다." data-parsley-required="true" data-parsley-type-message="이메일 형태로 입력해주세요. 해당 계정으로 주문 내역이 발송됩니다." data-parsley-type="email" data-parsley-required-message="필수 입력 항목입니다." id="emailAddress" name="emailAddress" value="">
+	</div>
+		</div>
+		<div class="uk-form-row">
+		<label class="uk-form-label"></label>
+		<div class="input-textfield width-max  " data-component-textfield="">
+			<label for="password">영문+숫자+특수문자 8~16자리(특수문자 괄호()는 사용 불가)</label>
+			<input type="password" autocomplete="new-password" data-parsley-trigger="keyup" data-parsley-equalto-message="입력값이 일치하지 않습니다." data-parsley-required="true" data-parsley-pattern-message="영문/숫자/특수문자 조합 8~16자 조합으로 입력해주세요." data-parsley-pattern="^(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])(?=.*[0-9]).{8,16}$" data-parsley-required-message="필수 입력 항목입니다." id="password" name="password">
+		</div>	
+			</div>
+			<div class="uk-form-row">
+		<label class="uk-form-label"></label>
+		<div class="input-textfield width-max  " data-component-textfield="">
+			<label for="confirmPassword">패스워드를 다시 입력해 주세요.</label>
+			<input type="password" autocomplete="new-password" data-parsley-trigger="keyup" data-parsley-equalto-message="입력값이 일치하지 않습니다." data-parsley-required="true" data-parsley-pattern-message="영문/숫자/특수문자 조합으로 입력해주세요. 특수문자 괄호()사용불가" data-parsley-required-message="필수 입력 항목입니다." data-parsley-equalto="[name=password]" id="confirmPassword" name="confirmPassword">
+		</div>
+				</div>
+				<div class="uk-form-row">
+	<label class="uk-form-label"></label>
+	<div class="input-textfield width-max  " data-component-textfield="">
+		<label for="firstName">이름을 입력해 주세요.</label>
+		<input type="text" data-parsley-trigger="keyup" data-parsley-pattern="[ㄱ-ㅎㅏ-ㅣ가-힣|a-z|A-Z]+" data-parsley-required-message="필수 입력 항목입니다." data-parsley-equalto-message="입력값이 일치하지 않습니다." data-parsley-required="true" data-parsley-type-message="한글과 영문만 입력 가능합니다." data-parsley-pattern-message="한글과 영문만 입력 가능합니다." id="firstName" name="firstName" value="">
+	</div>
+				</div>
+				<div class="uk-form-row">
+	<label class="uk-form-label"></label>
+	<div class="input-textfield width-max  " data-component-textfield="">
+		<label for="phone">휴대폰 번호 '-'표 없이 입력해 주세요.</label>
+		<input type="text" data-parsley-trigger="keyup" data-parsley-pattern="^[0-9]*$" data-parsley-required-message="필수 입력 항목입니다." data-parsley-equalto-message="입력값이 일치하지 않습니다." data-parsley-required="true" data-parsley-type-message="숫자만 입력 가능합니다." data-parsley-pattern-message="숫자만 입력 가능합니다." id="phone" name="phone" value="">
+	</div>	
+				</div>
+					<div class="uk-form-row">
+						<!-- 이용약관 -->
+						<div class="register-terms" style="clear:both;">
+							<div class="agree">
+								<div class="uk-grid">
+									<h6 class="uk-width-1-2 tit">이용약관</h6>
+									<a target="_blank" class="uk-width-1-2 uk-text-right btn-agree-allview" href="/kr/ko_kr/cscenter/policy">전문보기</a>
+								</div>
+								<div class="uk-grid uk-margin-top-remove">
+									<div class="uk-width-1-1">
+										<div class="scroll-box agree-content">
+											<p><span class="redactor-ie-paste"></span>
+</p>
+
+									
+										<div class="uk-grid">
+											<div class="uk-width-1-1">
+												<button class="button xlarge width-max" type="submit">회원가입하기 (만 14세 이상)</button>
+											</div>
+										</div>
+									
+								</div>
+							</div>
+							<div class="footer">
+
+							</div>
+						
+					
+				</div>
+			</div>
+		</section>
+	
+		</section>
+</body>
+</html>
