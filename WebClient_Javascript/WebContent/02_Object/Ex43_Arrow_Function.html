@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<p id="demo"></p>
+</body>
+<script type="text/javascript">
+
+		var foo = function(){console.log("foo");}
+		foo();
+		
+		//화살표 함수
+		//매개변수 (parameter) 없는 경우
+		var bar = () => console.log("bar");
+		bar();
+		
+		//매개변수 1개
+		//var foo2 = function(x){x}
+		var foo2 = x => x;
+		
+		var hello;
+		//hello = (val) => "Hello " + val;
+		hello = val => "Hello " + val;
+		document.getElementById("demo").innerHTML = hello("Universe!");
+		
+		//매개변수가 여러개인 경우
+		var foo3 = (a, b) => {return a + b};
+		
+		var foo4 = (a, b) => {var c = d; return a+b+c};
+		
+		//객체를 반환할 때
+		var foo5 = () => ({a:1, b:2, c:3});
+		//var foo5 = () => {return {a:1, b:2, c:3}};
+		console.log(typeof(foo5())); 
+		
+		//즉시 실행 함수
+		(
+			function(){
+				//구문		
+			}()
+		);
+		
+		(
+			() => {}		
+		)
+		
+		//java:람다식
+		//c#,java 8, coffeeScript 등에서 축약형 함수 표현식 이미 사용 중
+	</script>
+</html>

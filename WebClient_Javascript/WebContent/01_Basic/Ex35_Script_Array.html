@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		/*
+			javascript: Array(정적+Collection)
+		*/
+		
+		var array = ['포도', '사과'];
+		document.write(array.toString() + "<br>"); //재정의(배열값을 출력)
+		document.write(array + "<br> toString() default <br>")
+		
+		for(let i = 0; i < array.length; i++) {
+			document.write(array[i] + "<br>");
+		}
+		
+		//동적 영역(collection)
+		array[2] = "바나나"; //동적 데이터 추가
+		document.write(array.toString() + "<br>" + array.length + "<br>");
+		
+		array[10] = "애플망고"; 
+		document.write(array.toString() + "<br>" + array.length + "<br>");
+		
+		document.write(array[9] + " _array[9]" + "<br>"); //undefined
+		array[9] = "배";
+		document.write("초기화" + array[9] + " _array[9]" + "<br>");
+		
+		var array2 = ["one", "two", "three"];
+		document.write(array2.length + "<br>");
+		array2.length = 2;
+		document.write(array2.toString() + "<br>" + array2.length + "<br>");
+		
+		array2.length = 4;
+		document.write(array2.toString() + "<br>" + array2.length + "<br>");
+		document.write(array2[2] + "<br>");
+		
+		//<POINT>
+		//javascript Array >> stack >> LIFO >> push(), pop()
+		array2.push("four");
+		document.write(array2.toString() + "<br>" + array2.length + "<br>");
+		
+		document.write(array2.pop() + "<br>");
+		document.write(array2.pop() + "<br>");
+		document.write(array2.pop() + "<br>");
+		document.write(array2.pop() + "<br>");
+		document.write(array2.pop() + "<br>");
+		
+		document.write(array2.toString() + "<br>" + array2.length + "<br>");
+		
+		
+		//***************************************************
+		var list = [];
+		list.push("A");
+		list.push("B");
+		list.push("C");
+		
+		document.write("<br>" + list.pop());
+		
+		
+	</script>
+	
+	
+</head>
+<body>
+	
+
+</body>
+</html>

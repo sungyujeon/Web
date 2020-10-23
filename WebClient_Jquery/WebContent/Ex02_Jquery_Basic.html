@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#btn').click(function(){
+				$(this).hide();
+			})
+		});
+	
+		//jQuery
+		/*
+		Basic Syntax
+			1)A $ sign to define/access jQuery
+			2)A (selector) to "query (or find)" HTML elements
+			3)A jQuery action() to be performed on the element(s)
+
+		jQuery: 선택자...POINT!	
+		*/
+		/*
+		$(document).ready(function(){
+			$('#btn').click(function(){
+				alert("Jquery");
+			})
+		});
+		*/
+	
+		//JavaScript
+		/*
+		window.onload = function(){
+			document.getElementById("btn").onclick=function(){
+				alert("DOM script")
+			};
+		};
+		*/
+	</script>
+</head>
+<body>
+	<input type="button" id="btn" value="버튼">
+</body>
+</html>

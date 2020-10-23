@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		var myObj={name:"john",age:31,city:"seoul"};
+		console.log(myObj);
+		
+		//JSON 객체를 문자열 데이터 변환
+		//login.jps?name=john&age=31&city=seoul
+		var myJsonString=JSON.stringify(myObj);
+		console.log(myJsonString);
+		
+		var myObj2='{"name":"john","age":31,"city":"seoul"}'; //JSON 형식의 문자
+		console.log(myObj2);
+		var myJson=JSON.parse(myObj2);
+		console.log("myJson: " + myJson);
+		console.log("myJson.name: " + myJson.name); //객체.속성명
+		console.log("myJson['name']: " + myJson["name"]); //객체["속성명"]
+		
+		/*
+		<확장자 정리!>
+		htm,html   >> index.htm, index.html
+		css        >> common.css
+		javascript >> common.js
+		json       >> common.json >> 형식(MIME) >> application/json
+		xml        >> common.xml		
+		*/
+		
+		let myCars;
+		myCars = {
+		  "name":"John",
+		  "age":30,
+		  "cars": [
+		    		{"name":"Ford", "models":["Fiesta", "Focus", "Mustang"]},
+		    		{"name":"BMW", "models":["320", "X3", "X5"]},
+		    		{"name":"Fiat", "models":["500", "Panda"] }
+		  		  ]
+		}
+		
+		//차량이름 >> 모델명 추출
+		//ford - Fiesta Focus Mustang
+		//bms
+		//개선된  for문
+		var cars = myCars["cars"];
+		for(let index in cars){
+			let name = cars[index].name;
+			let models = cars[index].models;
+			document.write(name+" - "+models+"<br>");
+		}		
+	
+	
+	</script>
+</head>
+<body>
+
+</body>
+</html>

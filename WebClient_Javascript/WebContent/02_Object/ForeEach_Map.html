@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+	<script type="text/javascript">
+	/*
+		for(let i =0; i < 10; i++){}
+		for(let index in Array){}
+		for(let key in Object){}
+		
+		Array.isArray();
+		Array.forEach();
+		Array.map();
+		
+		Arrow Function 결합
+		
+		참고 >> https://www.w3schools.com/js/js_array_iteration.asp
+	*/
+	window.onload=function(){
+		//forEach();
+		var txt = "";
+		var numbers = [45, 4, 9, 16, 25];
+		numbers.forEach(myFunction);
+		document.getElementById("demo").innerHTML = txt;
+	
+		function myFunction(value, index, array) {
+		  txt = txt + "[" + value + "]" + index + "["+ array + "]" + "<br>"; 
+		}
+		
+		//Map();
+		var numbers1 = [45, 4, 9, 16, 25];
+		var numbers2 = numbers1.map(myFunction2);
+		
+		document.getElementById("demo2").innerHTML = numbers2;
+		
+		function myFunction2(value, index, array) {
+			return value * 2;
+		}
+		
+		var evens = [2,4,6,8];
+		var odds = evens.map(v => v+1);
+		console.log(odds);
+		
+		var nums = evens.map((val,index) => val + index);
+		console.log(nums);
+		
+		var fives = [];
+		evens.forEach(val => {
+			if(val % 2 === 0){
+				fives.push(val);
+			}
+		});
+		
+		console.log(fives);
+		
+	}
+	
+	</script>
+</head>
+<body>
+	<p id="demo"></p>
+	<p id="demo2"></p>
+</body>
+</html>
