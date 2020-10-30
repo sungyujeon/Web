@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"
+	charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<input type="text" id="search">
+	<input type="button" value="emplist" id="btn">
+	<table id = "list" border="1"></table>
+	<select class="form-control" id="sel" name="sel"></select>
+
+</body>
+<script type="text/javascript">
+
+
+	$('#btn').click(function(){
+		let subwayAPI = "http://openapi.seoul.go.kr:8088/6d4176535831303131303878556b7863/json/SearchFirstAndLastTrainbyLineServiceNew/1/100/" + $('#search').val() +"/" + i + "/" + j;
+		
+		
+		
+		var array = [{"name":"김"},{"name1": "김1"},{"name2": "김3"}];
+		console.log(array);
+		console.log(array[0]);
+		console.log(datas);
+		console.log(datas.children);
+		var stListArray = [];
+		for(let i = 0; i < datas.length; i++){
+			stListArray.push(datas[i].SearchFirstAndLastTrainbyLineServiceNew.row);
+		}
+		console.log("stListArray: " + stListArray)
+		var stNameList = [];
+		for(let i = 0; i < stListArray[0].length; i++){
+			stNameList.push(stListArray[0][i].STATION_NM);
+		}
+	
+	
+	
+	
+	
+	//Data
+	getStation();
+
+	document.getElementById("sel").onchange = function() {
+
+		var control = document.getElementById("sel");
+		changeTable(control.options[control.selectedIndex].value);
+	}
+
+	var tableName = "testTable";
+	function changeTable(station) {
+		if (document.getElementById(tableName) != null) {
+			document.getElementById(tableName).remove();
+
+		}
+
+		var target = [];
+		
+		//var stListArray = []; >> 6가지 stList
+		for(let index in stListArray){
+			for (let i in stListArray[index]) {
+				if (stListArray[index][i].STATION_NM === station)
+					target.push(stListArray[index][i]);
+			}
+		}
+		var headers = [ "역명", "상/하행", "요일", "첫차시간", "막차시간"];
+		var table = document.createElement("table"); //<table id=""></table>
+		table.setAttribute("id", tableName);
+		table.setAttribute("class", "table table-hover");
+		for (let i = 0; i < target.length; i++) {
+			var tr = document.createElement("tr");
+			var innerEle = "";
+			var text = "";
+			if (i === 0) {
+				tr.setAttribute("class", "table-primary");
+				innerEle = "th";
+				for (var j = 0; j < headers.length; j++) {
+					var td = document.createElement(innerEle);
+					td.innerHTML = headers[j];
+					tr.appendChild(td);
+				}
+				table.appendChild(tr);
+				document.body.appendChild(table);
+				tr = document.createElement("tr");
+			}
+			innerEle = "td";
+			var td1 = document.createElement(innerEle);
+			td1.innerHTML = target[i].STATION_NM;
+			tr.appendChild(td1);
+			var td2 = document.createElement(innerEle);
+			td2.innerHTML = target[i].INOUT_TAG.replace("1", "상행").replace("2", "하행");
+			tr.appendChild(td2);
+			var td3 = document.createElement(innerEle);
+			td3.innerHTML = target[i].WEEK_TAG.replace("1", "평일").replace("2", "토요일").replace("3", "일요일(휴일)");
+			tr.appendChild(td3);
+			var td4 = document.createElement(innerEle);
+			td4.innerHTML = toTime(target[i].FIRST_TIME);
+			tr.appendChild(td4);
+			var td5 = document.createElement(innerEle);
+			td5.innerHTML = toTime(target[i].LAST_TIME);
+			tr.appendChild(td5);
+
+			table.appendChild(tr);
+		}
+
+		document.body.appendChild(table);
+	}
+
+	
+
+	function getStation() {
+		let stations = [];
+		for (let index in stNameList) {
+			let station = stNameList[index];
+			if (stations.indexOf(station) < 0) {
+				if (stations.length == 0) {
+					let option = document.createElement("option");
+					option.innerHTML = "역을 선택해주세요";
+					option.setAttribute("value", "선택해주세요");
+					document.getElementById("sel").appendChild(option);
+				}
+
+				let option = document.createElement("option");
+				option.innerHTML = station;
+				option.setAttribute("value", station);
+				document.getElementById("sel").appendChild(option);
+				stations.push(station);
+			}
+		}
+
+	}
+	
+	function toTime(obj){
+		return obj.substr(0, 2)+"시"+obj.substr(2, 2)+"분";
+	}
+	
+	});
+</script>
+</html>

@@ -1,6 +1,8 @@
 INDEX VERSION 1.131
 C:\Users\user\Desktop\0803_bit\WEB\WebClientLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3006731305.index
 \WebJquery_Ajax_Board\src
+C:\Users\user\Desktop\0803_bit\WEB\WebClientLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3884334354.index
+\WebClient_Jquery_Ajax\src
 C:\Users\user\Desktop\0803_bit\WEB\WebClientLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3096309853.index
 \WebClient_Javascript\src
 C:\Users\user\Desktop\0803_bit\WEB\WebClientLab\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2698036860.index
